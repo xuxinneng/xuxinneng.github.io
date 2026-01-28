@@ -51,6 +51,13 @@
     ul { padding-left: 20px; margin: 16px 0; }
     li { margin-bottom: 12px; }
     p { margin: 12px 0; }
+    code {
+      background: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+      font-size: 14px;
+    }
 
     /* 操作流程样式 */
     .steps {
@@ -101,7 +108,7 @@
 <h1 id="title">煦新能BMS App 技术支持</h1>
 
 <div class="notice" id="compat-notice">
-  ⚠️ 本 App 为专用软件，仅支持「煦新能」品牌 BMS 电池设备。
+  ⚠️ 本 App 为专用软件，仅支持蓝牙名称以 <code>ZJZX</code> 开头的「煦新能」BMS 电池设备。
 </div>
 
 <p id="intro">感谢使用煦新能BMS App！如遇问题，请参考以下信息或联系开发者：</p>
@@ -114,7 +121,7 @@
   </p>
 </div>
 
-<!-- ✅ 操作流程 -->
+<!-- 操作流程 -->
 <h2 id="guide-title">使用流程</h2>
 <ol class="steps">
   <li id="step1">打开手机 <strong>蓝牙</strong></li>
@@ -123,7 +130,7 @@
   <li id="step4">连接成功后，点击 <strong>“实时刷新”</strong> 查看电池数据</li>
 </ol>
 
-<!-- ✅ 新增：参数设置功能预告 -->
+<!-- 参数设置预告 -->
 <div class="notice" id="feature-coming-soon">
   ⚙️ 参数设置功能正在优化中，敬请期待！
 </div>
@@ -133,6 +140,8 @@
   <li><strong id="q1">Q：如何连接设备？</strong><br><span id="a1">A：请确保「煦新能BMS」电池设备已开机并处于可发现状态，然后在 App 中点击“扫描设备”。</span></li>
   <li><strong id="q2">Q：为什么扫描不到设备？</strong><br><span id="a2">A：请检查：① 手机蓝牙已开启；② 已允许位置权限（iOS 系统要求）；③ 设备在附近且未被其他手机连接。</span></li>
   <li><strong id="q3">Q：连上设备但无数据显示？</strong><br><span id="a3">A：本 App 仅支持「煦新能」品牌设备。若连接非兼容设备，将无法读取数据。</span></li>
+  <!-- ✅ 新增：ZJZX 设备识别规则 -->
+  <li><strong id="q4">Q：哪些设备可以连接？</strong><br><span id="a4">A：本 App 仅支持蓝牙名称以 <code>ZJZX</code> 开头的「煦新能」专用 BMS 设备（例如：ZJZXAD0001）。其他设备将被自动忽略。</span></li>
 </ul>
 
 <div class="footer-link">
@@ -145,7 +154,7 @@
   const translations = {
     zh: {
       title: "煦新能BMS App 技术支持",
-      compatNotice: "⚠️ 本 App 为专用软件，仅支持「煦新能」品牌 BMS 电池设备。",
+      compatNotice: "⚠️ 本 App 为专用软件，仅支持蓝牙名称以 <code>ZJZX</code> 开头的「煦新能」BMS 电池设备。",
       intro: "感谢使用煦新能BMS App！如遇问题，请参考以下信息或联系开发者：",
       phoneLabel: "📱 联系电话：",
       hours: "(工作日 9:00–18:00)",
@@ -164,10 +173,96 @@
       a2: "A：请检查：① 手机蓝牙已开启；② 已允许位置权限（iOS 系统要求）；③ 设备在附近且未被其他手机连接。",
       q3: "Q：连上设备但无数据显示？",
       a3: "A：本 App 仅支持「煦新能」品牌设备。若连接非兼容设备，将无法读取数据。",
+      q4: "Q：哪些设备可以连接？",
+      a4: "A：本 App 仅支持蓝牙名称以 <code>ZJZX</code> 开头的「煦新能」专用 BMS 设备（例如：ZJZXAD0001）。其他设备将被自动忽略。",
       privacyLink: "隐私政策",
       copyright: "© 2026 煦新能科技有限公司"
     },
     en: {
       title: "XuXinNeng BMS App Technical Support",
-      compatNotice: "⚠️ This is a dedicated app that only supports 'XuXinNeng' BMS battery devices.",
-      intro: "Thank you for using the XuXinNeng
+      compatNotice: "⚠️ This app is dedicated and only supports 'XuXinNeng' BMS battery devices whose Bluetooth name starts with <code>ZJZX</code>.",
+      intro: "Thank you for using the XuXinNeng BMS App! If you encounter any issues, please refer to the information below or contact us:",
+      phoneLabel: "📱 Phone:",
+      hours: "(Mon–Fri, 9:00 AM – 6:00 PM)",
+      emailLabel: "✉️ Email Support:",
+      emailLink: "84248515@qq.com",
+      guideTitle: "Usage Guide",
+      step1: "Turn on your phone’s <strong>Bluetooth</strong>",
+      step2: "Tap <strong>“Start Scan”</strong> in the app",
+      step3: "Select your <strong>‘XuXinNeng BMS’ device</strong> from the list and connect",
+      step4: "After connecting, tap <strong>“Real-time Refresh”</strong> to view battery data",
+      featureComingSoon: "⚙️ Parameter settings feature is under optimization. Coming soon!",
+      faqTitle: "Frequently Asked Questions",
+      q1: "Q: How do I connect to a device?",
+      a1: "A: Please ensure your 'XuXinNeng BMS' battery device is powered on and in discoverable mode, then tap 'Scan Device' in the app.",
+      q2: "Q: Why can't I find my device?",
+      a2: "A: Please check: ① Bluetooth is enabled on your phone; ② Location permission is granted (required by iOS); ③ The device is nearby and not connected to another phone.",
+      q3: "Q: Connected but no data shows?",
+      a3: "A: This app only supports 'XuXinNeng' branded devices. Non-compatible devices will not return data.",
+      q4: "Q: Which devices are supported?",
+      a4: "A: This app only supports 'XuXinNeng' BMS devices whose Bluetooth name starts with <code>ZJZX</code> (e.g., ZJZXAD0001). Other devices are automatically ignored.",
+      privacyLink: "Privacy Policy",
+      copyright: "© 2026 XuXinNeng Technology Co., Ltd."
+    }
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    localStorage.setItem('preferredLang', lang);
+
+    // Update UI
+    document.getElementById('title').textContent = translations[lang].title;
+    document.getElementById('compat-notice').innerHTML = translations[lang].compatNotice;
+    document.getElementById('intro').textContent = translations[lang].intro;
+    document.getElementById('phone-label').textContent = translations[lang].phoneLabel;
+    document.getElementById('hours').textContent = translations[lang].hours;
+    document.getElementById('email-label').textContent = translations[lang].emailLabel;
+    document.getElementById('email-link').textContent = translations[lang].emailLink;
+    document.getElementById('email-link').href = `mailto: $ {translations[lang].emailLink}`;
+    
+    // 操作流程
+    document.getElementById('guide-title').textContent = translations[lang].guideTitle;
+    document.getElementById('step1').innerHTML = translations[lang].step1;
+    document.getElementById('step2').innerHTML = translations[lang].step2;
+    document.getElementById('step3').innerHTML = translations[lang].step3;
+    document.getElementById('step4').innerHTML = translations[lang].step4;
+
+    // 功能预告
+    document.getElementById('feature-coming-soon').textContent = translations[lang].featureComingSoon;
+
+    // FAQ
+    document.getElementById('faq-title').textContent = translations[lang].faqTitle;
+    document.getElementById('q1').textContent = translations[lang].q1;
+    document.getElementById('a1').textContent = translations[lang].a1;
+    document.getElementById('q2').textContent = translations[lang].q2;
+    document.getElementById('a2').textContent = translations[lang].a2;
+    document.getElementById('q3').textContent = translations[lang].q3;
+    document.getElementById('a3').textContent = translations[lang].a3;
+    // ✅ 新增 Q4
+    document.getElementById('q4').textContent = translations[lang].q4;
+    document.getElementById('a4').innerHTML = translations[lang].a4;
+
+    // Footer
+    document.getElementById('privacy-link').textContent = translations[lang].privacyLink;
+    document.getElementById('privacy-link').href = "https://xuxinneng.github.io/privacy-policy/";
+    document.getElementById('copyright').textContent = translations[lang].copyright;
+
+    // Update button style
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    if (event && event.target) {
+      event.target.classList.add('active');
+    } else {
+      const btns = document.querySelectorAll('.lang-btn');
+      if (lang === 'zh') btns[0].classList.add('active');
+      else btns[1].classList.add('active');
+    }
+  }
+
+  window.onload = () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'zh';
+    setLang(savedLang);
+  };
+</script>
+
+</body>
+</html>
