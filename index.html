@@ -51,6 +51,44 @@
     ul { padding-left: 20px; margin: 16px 0; }
     li { margin-bottom: 12px; }
     p { margin: 12px 0; }
+
+    /* 操作流程样式 */
+    .steps {
+      padding-left: 20px;
+      margin: 16px 0 24px;
+      counter-reset: step-counter;
+    }
+    .steps li {
+      margin-bottom: 14px;
+      position: relative;
+      list-style: none;
+    }
+    .steps li:before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      background: #007aff;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 26px;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .footer-link {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .footer-link a {
+      color: #007aff;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -62,7 +100,6 @@
 
 <h1 id="title">煦新能BMS App 技术支持</h1>
 
-<!-- 🔥 新增：重要提示（审核友好） -->
 <div class="notice" id="compat-notice">
   ⚠️ 本 App 为专用软件，仅支持「煦新能」品牌 BMS 电池设备。
 </div>
@@ -72,8 +109,19 @@
 <div class="contact-box">
   <p><strong id="phone-label">📱 联系电话：</strong>189-5800-2876</p>
   <p><em id="hours">(工作日 9:00–18:00)</em></p>
-  <p><strong id="email-label">✉️ 邮箱支持：</strong><a href="mailto:support@xuxinneng.com" style="color:#007aff;">84248515@qq.com</a></p>
+  <p><strong id="email-label">✉️ 邮箱支持：</strong>
+    <a href="mailto:84248515@qq.com" style="color:#007aff;" id="email-link">84248515@qq.com</a>
+  </p>
 </div>
+
+<!-- ✅ 新增：操作流程 -->
+<h2 id="guide-title">使用流程</h2>
+<ol class="steps">
+  <li id="step1">打开手机 <strong>蓝牙</strong></li>
+  <li id="step2">在 App 中点击 <strong>“开始扫描”</strong></li>
+  <li id="step3">从列表中选择您的 <strong>「煦新能BMS」设备</strong> 并连接</li>
+  <li id="step4">连接成功后，点击 <strong>“实时刷新”</strong> 查看电池数据</li>
+</ol>
 
 <h2 id="faq-title">常见问题</h2>
 <ul>
@@ -82,7 +130,11 @@
   <li><strong id="q3">Q：连上设备但无数据显示？</strong><br><span id="a3">A：本 App 仅支持「煦新能」品牌设备。若连接非兼容设备，将无法读取数据。</span></li>
 </ul>
 
-<p id="copyright" style="margin-top: 30px; color: #666;">© 2026 煦新能科技有限公司</p>
+<div class="footer-link">
+  <a href="https://xuxinneng.github.io/privacy-policy/" target="_blank" id="privacy-link">隐私政策</a>
+</div>
+
+<p id="copyright" style="margin-top: 20px; color: #666; text-align: center;">© 2026 煦新能科技有限公司</p>
 
 <script>
   const translations = {
@@ -93,6 +145,12 @@
       phoneLabel: "📱 联系电话：",
       hours: "(工作日 9:00–18:00)",
       emailLabel: "✉️ 邮箱支持：",
+      emailLink: "84248515@qq.com",
+      guideTitle: "使用流程",
+      step1: "打开手机 <strong>蓝牙</strong>",
+      step2: "在 App 中点击 <strong>“开始扫描”</strong>",
+      step3: "从列表中选择您的 <strong>「煦新能BMS」设备</strong> 并连接",
+      step4: "连接成功后，点击 <strong>“实时刷新”</strong> 查看电池数据",
       faqTitle: "常见问题",
       q1: "Q：如何连接设备？",
       a1: "A：请确保「煦新能BMS」电池设备已开机并处于可发现状态，然后在 App 中点击“扫描设备”。",
@@ -100,6 +158,7 @@
       a2: "A：请检查：① 手机蓝牙已开启；② 已允许位置权限（iOS 系统要求）；③ 设备在附近且未被其他手机连接。",
       q3: "Q：连上设备但无数据显示？",
       a3: "A：本 App 仅支持「煦新能」品牌设备。若连接非兼容设备，将无法读取数据。",
+      privacyLink: "隐私政策",
       copyright: "© 2026 煦新能科技有限公司"
     },
     en: {
@@ -109,6 +168,12 @@
       phoneLabel: "📱 Phone:",
       hours: "(Mon–Fri, 9:00 AM – 6:00 PM)",
       emailLabel: "✉️ Email Support:",
+      emailLink: "84248515@qq.com",
+      guideTitle: "Usage Guide",
+      step1: "Turn on your phone’s <strong>Bluetooth</strong>",
+      step2: "Tap <strong>“Start Scan”</strong> in the app",
+      step3: "Select your <strong>‘XuXinNeng BMS’ device</strong> from the list and connect",
+      step4: "After connecting, tap <strong>“Real-time Refresh”</strong> to view battery data",
       faqTitle: "Frequently Asked Questions",
       q1: "Q: How do I connect to a device?",
       a1: "A: Please ensure your 'XuXinNeng BMS' battery device is powered on and in discoverable mode, then tap 'Scan Device' in the app.",
@@ -116,6 +181,7 @@
       a2: "A: Please check: ① Bluetooth is enabled on your phone; ② Location permission is granted (required by iOS); ③ The device is nearby and not connected to another phone.",
       q3: "Q: Connected but no data shows?",
       a3: "A: This app only supports 'XuXinNeng' branded devices. Non-compatible devices will not return data.",
+      privacyLink: "Privacy Policy",
       copyright: "© 2026 XuXinNeng Technology Co., Ltd."
     }
   };
@@ -131,6 +197,17 @@
     document.getElementById('phone-label').textContent = translations[lang].phoneLabel;
     document.getElementById('hours').textContent = translations[lang].hours;
     document.getElementById('email-label').textContent = translations[lang].emailLabel;
+    document.getElementById('email-link').textContent = translations[lang].emailLink;
+    document.getElementById('email-link').href = `mailto: $ {translations[lang].emailLink}`;
+    
+    // 操作流程
+    document.getElementById('guide-title').textContent = translations[lang].guideTitle;
+    document.getElementById('step1').innerHTML = translations[lang].step1;
+    document.getElementById('step2').innerHTML = translations[lang].step2;
+    document.getElementById('step3').innerHTML = translations[lang].step3;
+    document.getElementById('step4').innerHTML = translations[lang].step4;
+
+    // FAQ
     document.getElementById('faq-title').textContent = translations[lang].faqTitle;
     document.getElementById('q1').textContent = translations[lang].q1;
     document.getElementById('a1').textContent = translations[lang].a1;
@@ -138,19 +215,26 @@
     document.getElementById('a2').textContent = translations[lang].a2;
     document.getElementById('q3').textContent = translations[lang].q3;
     document.getElementById('a3').textContent = translations[lang].a3;
+
+    // Footer
+    document.getElementById('privacy-link').textContent = translations[lang].privacyLink;
+    document.getElementById('privacy-link').href = "https://xuxinneng.github.io/privacy-policy/";
     document.getElementById('copyright').textContent = translations[lang].copyright;
 
     // Update button style
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if (event && event.target) {
+      event.target.classList.add('active');
+    } else {
+      const btns = document.querySelectorAll('.lang-btn');
+      if (lang === 'zh') btns[0].classList.add('active');
+      else btns[1].classList.add('active');
+    }
   }
 
   window.onload = () => {
     const savedLang = localStorage.getItem('preferredLang') || 'zh';
     setLang(savedLang);
-    // Highlight correct button
-    const btnIndex = savedLang === 'zh' ? 0 : 1;
-    document.querySelectorAll('.lang-btn')[btnIndex].classList.add('active');
   };
 </script>
 
