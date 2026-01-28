@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>煦新能BMS App Support</title>
+  <title>煦新能BMS App 技术支持</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
@@ -11,12 +11,21 @@
       line-height: 1.6;
       max-width: 800px;
       margin: 0 auto;
-    }
-    h1, h2 {
       color: #333;
     }
+    h1, h2 {
+      color: #007aff;
+    }
+    .notice {
+      background: #fffbe6;
+      border-left: 4px solid #faad14;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+      font-size: 15px;
+    }
     .contact-box {
-      background: #f8f9fa;
+      background: #f0f9ff;
       padding: 15px;
       border-radius: 8px;
       margin: 15px 0;
@@ -33,63 +42,78 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
+      margin-left: 6px;
     }
     .lang-btn.active {
       background: #007aff;
       color: white;
     }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
+    ul { padding-left: 20px; margin: 16px 0; }
+    li { margin-bottom: 12px; }
+    p { margin: 12px 0; }
   </style>
 </head>
 <body>
 
 <div class="lang-switch">
-  <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
   <button class="lang-btn" onclick="setLang('en')">English</button>
 </div>
 
-<h1 id="title">XuxinnengBMS App 技术支持</h1>
-<p id="intro">感谢使用本应用！如遇问题，请联系开发者：</p>
+<h1 id="title">煦新能BMS App 技术支持</h1>
+
+<!-- 🔥 新增：重要提示（审核友好） -->
+<div class="notice" id="compat-notice">
+  ⚠️ 本 App 为专用软件，仅支持「煦新能」品牌 BMS 电池设备。
+</div>
+
+<p id="intro">感谢使用煦新能BMS App！如遇问题，请参考以下信息或联系开发者：</p>
 
 <div class="contact-box">
   <p><strong id="phone-label">📱 联系电话：</strong>189-5800-2876</p>
-  <p><em id="hours">(请在工作日 9:00–18:00 拨打)</em></p>
+  <p><em id="hours">(工作日 9:00–18:00)</em></p>
 </div>
 
 <h2 id="faq-title">常见问题</h2>
 <ul>
-  <li><strong id="q1">Q：如何连接蓝牙设备？</strong><br><span id="a1">A：请确保设备已开机，App 内点击“扫描设备”。</span></li>
-  <li><strong id="q2">Q：数据不更新？</strong><br><span id="a2">A：请检查蓝牙权限是否开启，并重启 App。</span></li>
+  <li><strong id="q1">Q：如何连接设备？</strong><br><span id="a1">A：请确保「煦新能BMS」电池设备已开机并处于可发现状态，然后在 App 中点击“扫描设备”。</span></li>
+  <li><strong id="q2">Q：为什么扫描不到设备？</strong><br><span id="a2">A：请检查：① 手机蓝牙已开启；② 已允许位置权限（iOS 系统要求）；③ 设备在附近且未被其他手机连接。</span></li>
+  <li><strong id="q3">Q：连上设备但无数据显示？</strong><br><span id="a3">A：本 App 仅支持「煦新能」品牌设备。若连接非兼容设备，将无法读取数据。</span></li>
 </ul>
 
-<p id="copyright" style="margin-top: 30px; color: #666;">© 2025 个人开发者</p>
+<p id="copyright" style="margin-top: 30px; color: #666;">© 2026 煦新能科技有限公司</p>
 
 <script>
   const translations = {
     zh: {
       title: "煦新能BMS App 技术支持",
-      intro: "感谢使用本应用！如遇问题，请联系开发者：",
+      compatNotice: "⚠️ 本 App 为专用软件，仅支持「煦新能」品牌 BMS 电池设备。",
+      intro: "感谢使用煦新能BMS App！如遇问题，请参考以下信息或联系开发者：",
       phoneLabel: "📱 联系电话：",
-      hours: "(请在工作日 9:00–18:00 拨打)",
+      hours: "(工作日 9:00–18:00)",
       faqTitle: "常见问题",
-      q1: "Q：如何连接蓝牙设备？",
-      a1: "A：请确保设备已开机，App 内点击“扫描设备”。",
-      q2: "Q：数据不更新？",
-      a2: "A：请检查蓝牙权限是否开启，并重启 App。",
-      copyright: "© 2025 煦新能科技（个人开发者）"
+      q1: "Q：如何连接设备？",
+      a1: "A：请确保「煦新能BMS」电池设备已开机并处于可发现状态，然后在 App 中点击“扫描设备”。",
+      q2: "Q：为什么扫描不到设备？",
+      a2: "A：请检查：① 手机蓝牙已开启；② 已允许位置权限（iOS 系统要求）；③ 设备在附近且未被其他手机连接。",
+      q3: "Q：连上设备但无数据显示？",
+      a3: "A：本 App 仅支持「煦新能」品牌设备。若连接非兼容设备，将无法读取数据。",
+      copyright: "© 2026 煦新能科技有限公司"
     },
     en: {
-      title: "XuxinnengBMS App Technical Support",
-      intro: "Thank you for using our app! If you encounter any issues, please contact the developer:",
+      title: "XuXinNeng BMS App Technical Support",
+      compatNotice: "⚠️ This is a dedicated app that only supports 'XuXinNeng' BMS battery devices.",
+      intro: "Thank you for using the XuXinNeng BMS App! If you encounter any issues, please refer to the information below or contact us:",
       phoneLabel: "📱 Phone:",
-      hours: "(Please call during business hours: 9:00 AM – 6:00 PM, Mon-Fri)",
+      hours: "(Mon–Fri, 9:00 AM – 6:00 PM)",
       faqTitle: "Frequently Asked Questions",
-      q1: "Q: How do I connect to a Bluetooth device?",
-      a1: "A: Please ensure the device is powered on, then tap 'Scan Device' in the app.",
-      a2: "A: Please check if Bluetooth permission is enabled and restart the app.",
-      q2: "Q: Why isn't the data updating?",
-      copyright: "© 2025 Independent Developer"
+      q1: "Q: How do I connect to a device?",
+      a1: "A: Please ensure your 'XuXinNeng BMS' battery device is powered on and in discoverable mode, then tap 'Scan Device' in the app.",
+      q2: "Q: Why can't I find my device?",
+      a2: "A: Please check: ① Bluetooth is enabled on your phone; ② Location permission is granted (required by iOS); ③ The device is nearby and not connected to another phone.",
+      q3: "Q: Connected but no data shows?",
+      a3: "A: This app only supports 'XuXinNeng' branded devices. Non-compatible devices will not return data.",
+      copyright: "© 2026 XuXinNeng Technology Co., Ltd."
     }
   };
 
@@ -99,14 +123,18 @@
 
     // Update UI
     document.getElementById('title').textContent = translations[lang].title;
+    document.getElementById('compat-notice').textContent = translations[lang].compatNotice;
     document.getElementById('intro').textContent = translations[lang].intro;
     document.getElementById('phone-label').textContent = translations[lang].phoneLabel;
     document.getElementById('hours').textContent = translations[lang].hours;
+    document.getElementById('email-label').textContent = translations[lang].emailLabel;
     document.getElementById('faq-title').textContent = translations[lang].faqTitle;
     document.getElementById('q1').textContent = translations[lang].q1;
     document.getElementById('a1').textContent = translations[lang].a1;
     document.getElementById('q2').textContent = translations[lang].q2;
     document.getElementById('a2').textContent = translations[lang].a2;
+    document.getElementById('q3').textContent = translations[lang].q3;
+    document.getElementById('a3').textContent = translations[lang].a3;
     document.getElementById('copyright').textContent = translations[lang].copyright;
 
     // Update button style
@@ -114,12 +142,12 @@
     event.target.classList.add('active');
   }
 
-  // On load: restore user's language preference
   window.onload = () => {
     const savedLang = localStorage.getItem('preferredLang') || 'zh';
     setLang(savedLang);
     // Highlight correct button
-    document.querySelector(`.lang-btn:nth-child(${savedLang === 'zh' ? 1 : 2})`).classList.add('active');
+    const btnIndex = savedLang === 'zh' ? 0 : 1;
+    document.querySelectorAll('.lang-btn')[btnIndex].classList.add('active');
   };
 </script>
 
